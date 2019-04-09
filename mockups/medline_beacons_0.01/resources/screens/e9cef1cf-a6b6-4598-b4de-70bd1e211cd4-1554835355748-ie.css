@@ -1,0 +1,76 @@
+#s-e9cef1cf-a6b6-4598-b4de-70bd1e211cd4 #s-Screen-bg {
+  -ms-transform: rotate(0.0deg);
+}
+#s-e9cef1cf-a6b6-4598-b4de-70bd1e211cd4 #s-Softkeys-bg {
+  -ms-transform: rotate(0.0deg);
+}
+#s-e9cef1cf-a6b6-4598-b4de-70bd1e211cd4 #s-Square {
+  -ms-transform: rotate(0.0deg);
+}
+#s-e9cef1cf-a6b6-4598-b4de-70bd1e211cd4 #s-Circle {
+  -ms-transform: rotate(0.0deg);
+}
+#s-e9cef1cf-a6b6-4598-b4de-70bd1e211cd4 #s-Triangle {
+  -ms-transform: rotate(0.0deg);
+}
+#s-e9cef1cf-a6b6-4598-b4de-70bd1e211cd4 #s-Bg {
+  -ms-transform: rotate(0.0deg);
+}
+#s-e9cef1cf-a6b6-4598-b4de-70bd1e211cd4 #s-more-vertical {
+  -ms-transform: rotate(0.0deg);
+}
+#s-e9cef1cf-a6b6-4598-b4de-70bd1e211cd4 #s-menu {
+  -ms-transform: rotate(0.0deg);
+}
+#s-e9cef1cf-a6b6-4598-b4de-70bd1e211cd4 #s-Text {
+  -ms-transform: rotate(0.0deg);
+}
+#s-e9cef1cf-a6b6-4598-b4de-70bd1e211cd4 #s-Bg_status {
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=15);
+  filter: alpha(opacity=15);
+  -ms-transform: rotate(0.0deg);
+}
+#s-e9cef1cf-a6b6-4598-b4de-70bd1e211cd4 #s-hour {
+  -ms-transform: rotate(0.0deg);
+}
+#s-e9cef1cf-a6b6-4598-b4de-70bd1e211cd4 #s-signals {
+  -ms-transform: rotate(0.0deg);
+}
+#s-e9cef1cf-a6b6-4598-b4de-70bd1e211cd4 #s-Text_1 {
+  -ms-transform: rotate(0.0deg);
+}
+#s-e9cef1cf-a6b6-4598-b4de-70bd1e211cd4 #s-Text_2 {
+  -ms-transform: rotate(0.0deg);
+}
+#s-e9cef1cf-a6b6-4598-b4de-70bd1e211cd4 #s-Text_3 {
+  -ms-transform: rotate(0.0deg);
+}
+#s-e9cef1cf-a6b6-4598-b4de-70bd1e211cd4 #s-Text_4 {
+  -ms-transform: rotate(0.0deg);
+}
+#s-e9cef1cf-a6b6-4598-b4de-70bd1e211cd4 #s-Text_5 {
+  -ms-transform: rotate(0.0deg);
+}
+#s-e9cef1cf-a6b6-4598-b4de-70bd1e211cd4 #s-Text_6 {
+  -ms-transform: rotate(0.0deg);
+}
+#s-e9cef1cf-a6b6-4598-b4de-70bd1e211cd4 #s-Text_7 {
+  -ms-transform: rotate(0.0deg);
+}
+#s-e9cef1cf-a6b6-4598-b4de-70bd1e211cd4 #s-Text_8 {
+  -ms-transform: rotate(0.0deg);
+}
+.devMobile #jim-container .ui-page {
+  overflow-x: hidden;
+}
+.non_jim_mobile #simulation {
+  overflow-x: hidden;
+}
+.web #simulation {
+  overflow-x: hidden;
+}
+#s-e9cef1cf-a6b6-4598-b4de-70bd1e211cd4 > #loadMark {
+  width: 1px;
+  visibility: hidden;
+  display: none;
+}
