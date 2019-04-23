@@ -1,21 +1,14 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import styles from "./assets/styles/App.scss";
 
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Hello Test!</Text>
+      <View className={styles.container}>
+          <Text className={styles.blue}>A blue background text</Text>
+          <Text>Hello Test uupdate! ok this works</Text>
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

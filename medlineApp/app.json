@@ -8,6 +8,11 @@
       "ios",
       "android"
     ],
+    "packagerOpts": {
+      "config": "metro.config.js",
+      "sourceExts": ["js", "jsx", "scss", "sass"],
+      "transformer": "node_modules/react-native-sass-transformer/index.js"
+    },
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
