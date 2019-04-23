@@ -1,24 +1,11 @@
 import React from 'react'
-import { Button, Text, View } from 'react-native'
+import { Text, View } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import { createStackNavigator, createAppContainer } from "react-navigation";
+import { Provider as PaperProvider, IconButton } from 'react-native-paper';
+import HomeScreen from './components/HomeScreen'
+import MedicalHistory from './components/MedicalHistory'
 import styles from "./assets/styles/App.scss"
-
-class HomeScreen extends React.Component {
-  render() {
-    return (
-      <View className={styles.container}>
-        <Text>Home Screen</Text>
-        <Ionicons name="md-checkmark-circle" size={32} color="green" />
-        <Text className={styles.blue}>A blue background text with SCSS</Text>
-        <Button
-          title="Go to Other Screen"
-          onPress={() => this.props.navigation.navigate('Other')}
-        />
-      </View>
-    )
-  }
-}
 
 class OtherScreen extends React.Component {
   render() {
@@ -27,10 +14,6 @@ class OtherScreen extends React.Component {
         <Text>Other Screen</Text>
         <Ionicons name="md-checkmark-circle" size={32} color="green" />
         <Text className={styles.blue}>This is another blue Screen</Text>
-        <Button
-          title="Go to Details... again"
-          onPress={() => this.props.navigation.navigate('Other')}
-        />
       </View>
     )
   }
@@ -38,18 +21,41 @@ class OtherScreen extends React.Component {
 
 const AppNavigator = createStackNavigator({
   Home: HomeScreen,
-  Other: OtherScreen
+  Other: OtherScreen,
+  History: MedicalHistory
   },
   {
-    initialRouteName: "Home"
-  }
+    initialRouteName: "Home",
+    defaultNavigationOptions: {
+      headerStyle: {
+        backgroundColor: '#6b52ae',
+      },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      },
+      headerRight: (
+        <IconButton
+          onPress={() => this.props.navigation.openDrawer()}
+          icon="menu"
+          size={28}
+          color="white"
+        />
+      ),
+    },
+  },
+  
 )
 
 const AppContainer = createAppContainer(AppNavigator);
 
 export default class App extends React.Component {
   render() {
-    return <AppContainer />
+    return (
+      <PaperProvider>
+        <AppContainer />
+      </PaperProvider>
+    )
   }
 }
 

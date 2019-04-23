@@ -1,8 +1,20 @@
 .container {
   flex: 1;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 3%;
+  margin-left: 5%;
 }
 .blue {
   background-color: aqua;
+}
+
+.horizontalFlex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between
+}
+
+.subtitle{
+  font-size: 1.5rem;
 }
