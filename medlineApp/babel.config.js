@@ -5,7 +5,9 @@ module.exports = function(api) {
     plugins:  [
       ["react-native-platform-specific-extensions", {
         "extensions": ["css", "scss", "sass"],
-      }], "react-native-classname-to-style"
+      }],
+      "react-native-classname-to-style",
+      "react-native-paper/babel"
     ]
   };
 };
