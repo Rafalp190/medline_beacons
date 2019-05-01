@@ -1,27 +1,21 @@
 import React from 'react'
-import { Text, View } from 'react-native'
-import { Ionicons } from '@expo/vector-icons'
-import { createStackNavigator, createAppContainer } from "react-navigation";
-import { Provider as PaperProvider, IconButton } from 'react-native-paper';
+import { createSwitchNavigator, createStackNavigator, createDrawerNavigator, createAppContainer } from "react-navigation"
+import { Provider as PaperProvider, IconButton } from 'react-native-paper'
 import HomeScreen from './components/HomeScreen'
 import MedicalHistory from './components/MedicalHistory'
-import styles from "./assets/styles/App.scss"
+import LoginScreen from './components/LoginScreen'
+import AuthLoadingScreen from './components/AuthLoadingScreen'
+import MyDrawer from './components/utils/MyDrawer'
 
-class OtherScreen extends React.Component {
-  render() {
-    return (
-      <View className={styles.container}>
-        <Text>Other Screen</Text>
-        <Ionicons name="md-checkmark-circle" size={32} color="green" />
-        <Text className={styles.blue}>This is another blue Screen</Text>
-      </View>
-    )
-  }
-}
 
-const AppNavigator = createStackNavigator({
+
+
+const AuthStack = createStackNavigator({
+  SignIn: LoginScreen
+})
+
+const AppNavigator = createDrawerNavigator({
   Home: HomeScreen,
-  Other: OtherScreen,
   History: MedicalHistory
   },
   {
@@ -34,26 +28,46 @@ const AppNavigator = createStackNavigator({
       headerTitleStyle: {
         fontWeight: 'bold',
       },
-      headerRight: (
-        <IconButton
-          onPress={() => this.props.navigation.openDrawer()}
-          icon="menu"
-          size={28}
-          color="white"
-        />
-      ),
     },
+    contentComponent: MyDrawer,
   },
-  
 )
 
-const AppContainer = createAppContainer(AppNavigator);
+const AppContainer = createAppContainer(createSwitchNavigator({
+  AuthLoading: AuthLoadingScreen,
+  App: AppNavigator,
+  Auth: AuthStack,
+},
+{
+  initialRouteName: 'AuthLoading'
+}
+));
 
 export default class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      username: "pepe27",
+      isDoctor: false,
+      history: {
+        name: "Pedro Páramo Flores", 
+        age: 27,
+        sex: 0,
+        recent_diagnosis: {},
+        chronic_conditions: {},
+        medical_history: {},
+      }
+    }
+  }
+
+  componentDidMount(){
+    //TODO db interaction
+    console.log("Did mount app")
+  }
   render() {
     return (
       <PaperProvider>
-        <AppContainer />
+        <AppContainer screenProps={{history: this.state.history}}/>
       </PaperProvider>
     )
   }

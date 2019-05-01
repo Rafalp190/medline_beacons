@@ -1,7 +1,7 @@
 import React from 'react'
 import { Text, View } from 'react-native'
-import { Ionicons } from '@expo/vector-icons'
 import styles from '../assets/styles/App.scss'
+import MyBar from './utils/MyBar'
 
 class MedicalHistory extends React.Component {
   static navigationOptions = {
@@ -17,6 +17,8 @@ class MedicalHistory extends React.Component {
 
     return (
       <View className={styles.container}>
+        <MyBar title="Medline Beacons" subtitle="Medical History" navigation={this.props.navigation}/>
+        <View style={{ height: 10 }} />
         <Text className={styles.subtitle}> Basic Information </Text>
         <Text> Name:  {name}</Text>
         <View className={styles.horizontalFlex}>
