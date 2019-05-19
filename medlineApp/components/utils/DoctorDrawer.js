@@ -4,7 +4,7 @@ import { Text, View, StyleSheet, ImageBackground, AsyncStorage } from 'react-nat
 import { Drawer, Avatar } from 'react-native-paper'
 import styles from '../../assets/styles/App.scss'
 
-class MyDrawer extends Component {
+class DoctorDrawer extends Component {
 
   navigateToScreen = ( route ) =>(
     () => {
@@ -34,10 +34,9 @@ class MyDrawer extends Component {
               onPress={this.navigateToScreen('Home')}
             />
             <Drawer.Item
-              label="Medical History"
-              icon="accessibility"
-              onPress={() => this.props.navigation.navigate('History', {
-                history: this.props.screenProps.history})}
+              label="Patients"
+              icon="people"
+              onPress={() => this.props.navigation.navigate('Patients')}
             />
           </Drawer.Section>
         </View>
@@ -61,4 +60,4 @@ class MyDrawer extends Component {
   }
 } 
 
-export default MyDrawer
+export default DoctorDrawer

@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "braces": "^3.0.2",
     "expo": "^32.0.0",
     "node-sass": "^4.11.0",
     "prop-types": "^15.7.2",
@@ -19,6 +20,9 @@
     "react-native-sass-transformer": "^1.4.0",
     "react-native-vector-icons": "^6.4.2",
     "react-navigation": "^3.8.1",
+    "react-redux": "^6.0.1",
+    "redux": "^4.0.1",
+    "redux-axios-middleware": "^4.0.0",
     "webpack": "^4.30.0"
   },
   "devDependencies": {

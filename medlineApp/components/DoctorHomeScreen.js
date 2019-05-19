@@ -19,7 +19,7 @@ class HomeScreen extends React.Component {
       <View className={styles.container}>
         <MyBar title="Medline Beacons" subtitle="Home" navigation={this.props.navigation} />
         <View style={{ height: 10 }} />
-        <Text> This is a homepage </Text>
+        <Text> This is a homepage for doctors</Text>
       </View>
     )
   

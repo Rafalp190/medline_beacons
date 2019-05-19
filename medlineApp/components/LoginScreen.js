@@ -11,8 +11,8 @@ class LoginScreen extends React.Component {
   };
 
   state = {
-    username: 'rafa.leon190@gmail.com',
-    password: 'admiasn',
+    username: 'paciente@gmail.com',
+    password: 'paciente',
     message: '',
   }
 
@@ -53,7 +53,14 @@ class LoginScreen extends React.Component {
     }
     ).then(async function (response){
       await AsyncStorage.setItem('userToken', response.data.token)
-      self.props.navigation.navigate('App')
+      
+      console.log(response.data.is_doctor)
+      if (response.data.is_doctor) {
+        self.props.navigation.navigate('Doctor')
+      } else {
+        self.props.navigation.navigate('App')
+      }
+      
     }).catch(function(error){
       const err = error
       self.setState({
@@ -61,6 +68,7 @@ class LoginScreen extends React.Component {
         password: '',
         message: err.response.data.non_field_errors[0]
       })
+      
     })
     
   };
