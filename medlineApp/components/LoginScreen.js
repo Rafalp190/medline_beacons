@@ -11,8 +11,8 @@ class LoginScreen extends React.Component {
   };
 
   state = {
-    username: 'paciente@gmail.com',
-    password: 'paciente',
+    username: 'doctor@gmail.com',
+    password: 'doctor',
     message: '',
   }
 
@@ -54,7 +54,6 @@ class LoginScreen extends React.Component {
     ).then(async function (response){
       await AsyncStorage.setItem('userToken', response.data.token)
       
-      console.log(response.data.is_doctor)
       if (response.data.is_doctor) {
         self.props.navigation.navigate('Doctor')
       } else {

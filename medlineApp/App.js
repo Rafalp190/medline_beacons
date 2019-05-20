@@ -26,7 +26,7 @@ import Settings from './components/utils/Settings'
 
 
 const client = axios.create({
-  baseURL: 'http://ec2-3-87-30-21.compute-1.amazonaws.com:8000/api/',
+  baseURL: 'http://ec2-3-87-30-21.compute-1.amazonaws.com:8000/api',
   responseType: 'json'
 })
 
