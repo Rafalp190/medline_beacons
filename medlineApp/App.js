@@ -18,6 +18,7 @@ import { Provider as PaperProvider } from 'react-native-paper'
 import HomeScreen from './components/HomeScreen'
 import DoctorHomeScreen from './components/DoctorHomeScreen'
 import MedicalHistory from './components/MedicalHistory'
+import MedicalHistoryDoctor from './components/MedicalHistoryDoctor'
 import LoginScreen from './components/LoginScreen'
 import AuthLoadingScreen from './components/AuthLoadingScreen'
 import MyDrawer from './components/utils/MyDrawer'
@@ -41,6 +42,7 @@ const AuthStack = createStackNavigator({
   SignIn: LoginScreen
 })
 
+
 const AppNavigator = createDrawerNavigator({
   Home: HomeScreen,
   History: MedicalHistory,
@@ -63,8 +65,9 @@ const AppNavigator = createDrawerNavigator({
 
 const DoctorNavigator = createDrawerNavigator({
   Home: DoctorHomeScreen,
+  PatientHistory: MedicalHistoryDoctor,
   Patients : DoctorHomeScreen,
-  Settings: Settings
+  Settings: Settings,
   },
   {
     initialRouteName: "Home",
@@ -105,11 +108,6 @@ export default class App extends React.Component {
         medical_history: {},
       },
     }
-  }
-
-  componentDidMount(){
-    //TODO db interaction
-    console.log("Did mount app")
   }
   render() {
 

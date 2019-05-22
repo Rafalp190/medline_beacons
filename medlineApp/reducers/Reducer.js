@@ -2,10 +2,34 @@ import { combineReducers } from 'redux'
 import { TOGGLE_BLUETOOTH, ACCEPT_DOCTOR, REVOKE_DOCTOR, ACCEPT_PATIENT, REVOKE_PATIENT } from '../actions/Types'
 
 const INITIAL_STATE = {
-  toggle: false,
-  nearbyDoctors: [{id:1, name: "Gregory House"},{id:3, name: "John Doe"}],
-  myDoctors: [],
-  nearbyPatients: [{id:1, name: "Pedro Páramo"},{id:3, name: "Sasha Gray"}],
+  toggle: true,
+  nearbyDoctors:
+    [
+      {
+        name: 'Carlos Francisco Paiz',
+        
+      }
+    ],
+  myDoctors: 
+    [
+      {
+      name: 'Benjamin House',
+      }
+    ],
+  nearbyPatients: [
+    {
+      name: 'Gloria Valdez',
+      token: '0d248265d1759c7190bebbebe13597eb0730409b'
+    },
+    {
+      name: 'Erick Armando Paredes',
+      token: '94908ff2f65ea55c31e4e59e57fd8461c9bf15c8'
+    },
+    {
+      name: 'Vladimir Perez',
+      token: '1cab24769011a44af4f277505dae8f36efa48e6e'
+    }
+  ],
   myPatients: []
 }
 
@@ -16,10 +40,9 @@ const bluetoothReducer = (state = INITIAL_STATE, action) => {
       const toggle = !(action.payload)
       const newState = {
         ...state,
-         toggle 
+        toggle
         }
       return newState
-
     default:
       return state
   }

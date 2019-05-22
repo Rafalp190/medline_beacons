@@ -1,7 +1,7 @@
 import React from 'react'
 import { Text, View, AsyncStorage, Image, KeyboardAvoidingView} from 'react-native'
 import Axios from 'axios'
-import { Button, TextInput } from 'react-native-paper';
+import { Button, TextInput,  } from 'react-native-paper';
 import styles from "../assets/styles/App.scss"
 
 
@@ -33,11 +33,11 @@ class LoginScreen extends React.Component {
           value={this.state.password}
           onChangeText={password => this.setState({ password })}
         />
-        <Text>{ this.state.message }</Text>
         <Button mode="contained" onPress={this._signInAsync} >
           Sign In
         </Button>
-        <View style={{ height: 70 }} />
+        <View style={{ height: 20 }} />
+        <Text className={styles.loginText}>{ this.state.message }</Text>
       </KeyboardAvoidingView>
     );
   }
@@ -61,11 +61,11 @@ class LoginScreen extends React.Component {
       }
       
     }).catch(function(error){
-      const err = error
+
       self.setState({
         username: '',
         password: '',
-        message: err.response.data.non_field_errors[0]
+        message: 'Invalid Credentials'
       })
       
     })

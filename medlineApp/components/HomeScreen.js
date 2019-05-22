@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { acceptDoctor, revokeDoctor } from '../actions/Actions';
 import { Text, View, AsyncStorage, ScrollView } from 'react-native'
-import { Card, Avatar, Button, Divider } from 'react-native-paper';
+import { Card, Avatar, Button, Divider, Title } from 'react-native-paper';
 
 import MyBar from './utils/MyBar'
 import styles from '../assets/styles/App.scss'
@@ -12,7 +12,6 @@ class HomeScreen extends React.Component {
   static navigationOptions = {
     drawerLabel: 'Home',
   };
-
   
   componentDidMount() {
     //TODO db interaction
@@ -27,7 +26,7 @@ class HomeScreen extends React.Component {
         <ScrollView className={styles.cardContainer}>
           <View className={styles.cardContainer}>
             <View style={{ height: 3 }} />
-            <Text className={styles.subtitle} > My Doctors </Text>
+            <Title className={styles.subtitle} >My Doctors</Title>
             <View style={{ height: 3 }} />
             <Divider className={ styles.card } />
             <View style={{ height: 3 }} />
@@ -48,7 +47,7 @@ class HomeScreen extends React.Component {
           </View>
           <View  className={styles.cardContainer}>
             <View style={{ height: 3 }} />
-            <Text className={styles.subtitle} > Nearby Doctors </Text>
+            <Title className={styles.subtitle} >Nearby Doctors</Title>
             <View style={{ height: 3 }} />
             <Divider className={ styles.card } />
             <View style={{ height: 3 }} />

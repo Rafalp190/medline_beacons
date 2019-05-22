@@ -3,21 +3,15 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { acceptPatient, revokePatient } from '../actions/Actions'
 import { Text, View, AsyncStorage, ScrollView } from 'react-native'
-import { Card, Avatar, Button, Divider } from 'react-native-paper';
+import { Card, Avatar, Button, Divider, Title } from 'react-native-paper';
 
 import MyBar from './utils/MyBar'
 import styles from '../assets/styles/App.scss'
 
 class DoctorHomeScreen extends React.Component {
   static navigationOptions = {
-    drawerLabel: 'Home',
+    header: null,
   };
-
-  
-  componentDidMount() {
-    //TODO db interaction
-  }
-
 
   render() {
     return (
@@ -27,7 +21,7 @@ class DoctorHomeScreen extends React.Component {
         <ScrollView className={styles.cardContainer}>
           <View className={styles.cardContainer}>
             <View style={{ height: 3 }} />
-            <Text className={styles.subtitle} > Approved Patients </Text>
+            <Title className={styles.subtitle} > Approved Patients </Title>
             <View style={{ height: 3 }} />
             <Divider className={ styles.card } />
             <View style={{ height: 3 }} />
@@ -38,7 +32,7 @@ class DoctorHomeScreen extends React.Component {
                 <Card.Title title={ doctor.name } left={(props) => <Avatar.Icon {...props} icon="person" />} />
                 <Card.Actions>
                   <Button onPress={() => this.props.revokePatient(index)}>Remove Patient</Button>
-                  <Button onPress={() => console.log("View Patient")}>View History</Button>
+                  <Button onPress={() => this.props.navigation.navigate('PatientHistory', {token: doctor.token})}>View History</Button>
                 </Card.Actions>
               </Card>
               <Divider className={ styles.card } />
@@ -49,7 +43,7 @@ class DoctorHomeScreen extends React.Component {
           </View>
           <View  className={styles.cardContainer}>
             <View style={{ height: 3 }} />
-            <Text className={styles.subtitle} > Patient Requests </Text>
+            <Title className={styles.subtitle} > Patient Requests </Title>
             <View style={{ height: 3 }} />
             <Divider className={ styles.card } />
             <View style={{ height: 3 }} />

@@ -1,18 +1,10 @@
 import React, { Component } from 'react'
-import {NavigationActions} from 'react-navigation'
 import { Text, View, StyleSheet, ImageBackground, AsyncStorage } from 'react-native'
 import { Drawer, Avatar } from 'react-native-paper'
 import styles from '../../assets/styles/App.scss'
 
 class MyDrawer extends Component {
 
-  navigateToScreen = ( route ) =>(
-    () => {
-    const navigateAction = NavigationActions.navigate({
-        routeName: route
-    });
-    this.props.navigation.dispatch(navigateAction);
-  })
   _signOutAsync = async () => {
     await AsyncStorage.clear()
     this.props.navigation.navigate('Auth')
@@ -31,13 +23,12 @@ class MyDrawer extends Component {
             <Drawer.Item
               label="Home"
               icon="home"
-              onPress={this.navigateToScreen('Home')}
+              onPress={() => this.props.navigation.navigate('Home')}
             />
             <Drawer.Item
               label="Medical History"
               icon="accessibility"
-              onPress={() => this.props.navigation.navigate('History', {
-                history: this.props.screenProps.history})}
+              onPress={() => this.props.navigation.navigate('History')}
             />
           </Drawer.Section>
         </View>
@@ -46,8 +37,7 @@ class MyDrawer extends Component {
             <Drawer.Item
               label="Settings"
               icon="settings"
-              onPress={() => this.props.navigation.navigate('Settings', {
-                bluetooth: this.props.screenProps.bluetooth, bluetoothState: this.props.screenProps.enableBluetooth})}
+              onPress={() => this.props.navigation.navigate('Settings')}
             />
             <Drawer.Item
               label="Log Out"
